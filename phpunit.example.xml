@@ -18,4 +18,9 @@
             <directory suffix=".php">./app</directory>
         </whitelist>
     </filter>
+    <php>
+        <env name="CUTE_SECURE_CODE" value=""/>
+        <env name="CUTE_CLIENT_ID" value=""/>
+        <env name="KNOLSKAPE_APP_TOKEN" value=""/>
+    </php>
 </phpunit>

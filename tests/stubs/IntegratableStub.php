@@ -23,11 +23,6 @@ class IntegratableStub extends Model implements Integratable
 
     protected $connection = 'testbench';
 
-    public function getIntegratableId()
-    {
-        return 1;
-    }
-
     public function getIntegratableTools()
     {
         // getIntegratableTools 
@@ -44,4 +39,30 @@ class IntegratableStub extends Model implements Integratable
         return "kader@gmail.com";
     }
 
+    public function psychometricAssessmentGetId()
+    {
+        return "1";
+    }
+    public function psychometricAssessmentGetFirstName()
+    {
+        return "Mhd";
+    }
+    public function psychometricAssessmentGetLastName()
+    {
+        return "Noor";
+    }
+
+    public function psychometricAssessmentGetCuteClientId(){
+        return env('CUTE_CLIENT_ID');
+    }
+
+    public function psychometricAssessmentGetCuteProjectId()
+    {
+        return '143310';
+    }
+
+    public function psychometricAssessmentGetCuteSecureCode()
+    {
+        return env('CUTE_SECURE_CODE');
+    }
 }

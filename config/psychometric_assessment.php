@@ -11,15 +11,15 @@ return [
                 'cute',
                 'knolskape'
         ],
+        'cute' => [
+                'protocol' => env('CUTE_PROTOCOL', 'https'),
+                'domain' => env('CUTE_DOMAIN', 'www.cut-e.net'),
+                'path' => env('CUTE_PATH', 'maptq/ws')
+        ],
         'assessments_providers_urls' => [
-                'cute' => [
-                        'protocol' => env('CUTE_PROTOCOL', 'https'),
-                        'domain' => env('CUTE_DOMAIN', 'www.cut-e.net'),
-                        'path' => env('CUTE_PATH', 'maptq/ws')
-                ],
                 'knolskape' => [
                         'registration' => 'https://api-test.knolskape.com/ct/simulations/register?platformId=2',
                         'check_status' => ''
-                ]
+                ]    
         ]
 ];

@@ -28,17 +28,22 @@ abstract class TestCase extends Orchestra\Testbench\TestCase
     {
         $app['config']->set('database.default', 'testbench');
 
-        $app['config']->set('psychometric_assessment.intgratable_id', 'candidate_id');
-        $app['config']->set('psychometric_assessment.assessments_providers', [
-            'cute',
-            'knolskape'
-        ]);
-        $app['config']->set('psychometric_assessment.assessments_providers_urls.knolskape.registration', 'https://api-test.knolskape.com/ct/simulations/register?platformId=2');
-
         $app['config']->set('database.connections.testbench', [
             'driver'   => 'sqlite',
             'database' => ':memory:',
             'prefix'   => '',
+        ]);
+
+        $app['config']->set('psychometric_assessment.intgratable_id', 'candidate_id');
+        $app['config']->set('psychometric_assessment.assessments_providers', ['cute','knolskape']);
+        $app['config']->set('psychometric_assessment.assessments_providers_urls.knolskape.registration',
+                        'https://api-test.knolskape.com/ct/simulations/register?platformId=2');
+        
+        $app['config']->set('psychometric_assessment.cute',[
+            'protocol' => env('CUTE_PROTOCOL', 'https'),
+            'domain' => env('CUTE_DOMAIN', 'www.cut-e.net'),
+            'path' => env('CUTE_PATH', 'maptq/ws'),
+            'secure_code'=> env('CUTE_SECURE_CODE')
         ]);
         
         \Schema::create('candidates', function ($table) {
