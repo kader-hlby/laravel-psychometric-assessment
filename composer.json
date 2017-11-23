@@ -1,0 +1,43 @@
+{
+    "name": "accendo/PsychometricAssessment",
+    "description": "laravel 5.5 integration for psychometric assessments providers (e.g. cut-e and knolskape) package.",
+    "authors": [
+        {
+            "name": "kader",
+            "email": "abdul.kader.dev@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Accendo\\PsychometricAssessment\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/database": ">=5.0",
+        "illuminate/support": ">=5.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "~5.0"
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php",
+            "tests/stubs/ToolStub.php",
+            "tests/stubs/IntegratableStub.php",
+            "tests/stubs/AssessmentStub.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Accendo\\PsychometricAssessment\\PsychometricAssessmentServiceProvider"
+            ],
+            "aliases": {
+                "PsychometricAssessment": "Accendo\\PsychometricAssessment\\Facades\\PsychometricAssessment"
+            }
+        }
+    }
+}
